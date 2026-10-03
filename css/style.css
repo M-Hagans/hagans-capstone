@@ -1,0 +1,143 @@
+/* 
+   BASE STYLES (MOBILE FIRST)
+   WHAT: Default styles for small screens.
+   WHAT IT DOES: Sets the basic look and stacks everything in one column.
+   WHAT IT MEANS: The website works on a phone first before adding desktop features.
+   */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  /* Dark background for a Dark vibe */
+  background-color: #0a192f; 
+  color: #eee;
+}
+
+/* WHAT: Container class.
+   WHAT IT DOES: Centers the page and stops it from getting too wide.
+   WHAT IT MEANS: Keeps content easy to read on huge monitors. */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 8px;
+  color: #00ffff; 
+}
+
+p.lead {
+  text-align: center;
+  margin: 0 0 18px;
+  color: #bbb;
+}
+
+.ai-disclosure {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+/* WHAT: Responsive image style.
+   WHAT IT DOES: Makes the image fill the width but keep its shape.
+   WHAT IT MEANS: The image scales up and down without stretching. */
+.rwd-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+/* WHAT: Video wrap style.
+   WHAT IT DOES: Locks a 16:9 shape so the video doesn't look stretched.
+   WHAT IT MEANS: No matter the screen size, the video keeps the same shape. */
+.video-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.video-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* WHAT: Cards wrapper.
+   WHAT IT DOES: Uses Flexbox to align the cards.
+   WHAT IT MEANS: Allows cards to move from a vertical list to a side-by-side row. */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* WHAT: Individual card style.
+   WHAT IT DOES: Adds a background, padding, and a shadow.
+   WHAT IT MEANS: Makes each section look like a separate "card" on the page. */
+.card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  border: 1px solid #333;
+}
+
+.card h2 {
+  color: #C0C0C0; 
+  margin-top: 0;
+}
+
+/* 
+   BREAKPOINT 1: TABLET (600px and up)
+   WHAT: Media query for medium screens.
+   WHAT IT DOES: Changes background to a slightly lighter dark blue.
+   WHAT IT MEANS: The screen is now wide enough to show two items.
+    */
+@media (min-width: 600px) {
+  body { background-color: #112240; }
+
+  .cards { flex-direction: row; }
+
+  /* width 48% means two cards fit in one row */
+  .card { width: 48%; }
+}
+
+/* 
+   BREAKPOINT 2: DESKTOP (900px and up)
+   WHAT: Media query for larger screens.
+   WHAT IT DOES: Changes background to a deep midnight blue and makes 3 columns.
+   WHAT IT MEANS: More space allows us to fit three items in one row.
+    */
+@media (min-width: 900px) {
+  body { background-color: #0a192f; }
+
+  /* width 30% means three cards fit in one row */
+  .card { width: 30%; }
+}
+
+/* 
+   BREAKPOINT 3: LARGE DESKTOP (1200px and up)
+   WHAT: Media query for extra-large screens.
+   WHAT IT DOES: Changes background to a very dark navy and adds more padding.
+   WHAT IT MEANS: Maximizes the use of a large monitor by showing everything in one row.
+   */
+@media (min-width: 1200px) {
+  body { background-color: #020c1b; }
+
+  .container { padding: 28px; }
+
+  /* width 22% means four cards fit in one row */
+  .card { width: 22%; }
+}

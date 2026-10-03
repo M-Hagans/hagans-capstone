@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- WHAT: Viewport meta tag. 
+       WHAT IT DOES: Tells the browser to scale the page to the device width.
+       WHAT IT MEANS: The site won't look like a tiny desktop page on a phone. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Images and Responsive Video</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- WHAT: Main container.
+       WHAT IT DOES: Centers everything and stops it from spreading too wide.
+       WHAT IT MEANS: The content stays in a neat middle column on big screens. -->
+  <div class="container">
+    <header>
+      <!-- WHAT: Main heading.
+           WHAT IT DOES: Sets the title of the page.
+           WHAT IT MEANS: This is the biggest and most important text. -->
+      <h1>DJ BREAKFAST</h1>
+      
+      <!-- WHAT: Lead paragraph.
+           WHAT IT DOES: Gives a quick intro to the page.
+           WHAT IT MEANS: This is a sub-title that explains the purpose of the site. -->
+      <p class="lead">Resize the browser to see colors and columns change.</p>
+      
+      <!-- WHAT: AI Disclosure.
+           WHAT IT DOES: Tells AI was used for the layout.
+           WHAT IT MEANS: Being honest about using tools to build the project. -->
+      <div class="ai-disclosure">
+      </div>        <p>AI DISCLOSURE: I used ChatGPT, to generate artwork and to help with the media queries. I reviewed all AI‑assisted code by hand and added comments explaining how each part works. This page also includes a video sourced from YouTube; I do not own any rights to the video.</p>
+
+    </header>
+
+    <!-- WHAT: Responsive image.
+         WHAT IT DOES: Fills the width of the screen and keeps its shape.
+         WHAT IT MEANS: The picture won't get cut off or stretched on different phones. -->
+    <img class="rwd-img" 
+         src="images/studio-main.jpg" 
+         alt="A wide shot of the DJ  setup with controllers and monitors">
+
+    <!-- WHAT: Responsive video wrapper.
+         WHAT IT DOES: Forces the video to keep a 16:9 widescreen shape.
+         WHAT IT MEANS: The video stays looking like a movie and doesn't get black bars or crop. -->
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/r5X_uXoqmsE" 
+              title="DJ on the ones and twos performance" 
+              allowfullscreen></iframe>
+    </div>
+
+    <!-- WHAT: Cards wrapper.
+         WHAT IT DOES: A flexbox that switches from 1 column to more as the screen grows.
+         WHAT IT MEANS: The layout automatically adjusts based on the device size. -->
+    <div class="cards">
+
+      <!-- WHAT: Content Card.
+           WHAT IT DOES: A box that holds a specific topic.
+           WHAT IT MEANS: Organizes info into neat, separate sections. -->
+      <div class="card">
+        <h2>The Gear</h2>
+        <p>I use an RP8000 and a Numark turntable to keep my mixes sounding sharp and professional.</p>
+      </div>
+
+      <div class="card">
+        <h2>Musical Style</h2>
+        <p>Spinning Top 40's House and Reggaeton while keeping the floor moving.</p>
+      </div>
+
+      <div class="card">
+        <h2>The Performance</h2>
+        <p>Watching the crowd to see what they like, then change the music to keep the floor moving.</p>
+      </div>
+
+      <div class="card">
+        <h2 >Digital Tools</h2>
+        <p>I use Algoriddim for my software to keep my music organized.</p>
+      </div>
+
+    </div><!-- /.cards -->
+  </div><!-- /.container -->
+
+</body>
+</html>
