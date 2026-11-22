@@ -1,143 +1,262 @@
-/* 
-   BASE STYLES (MOBILE FIRST)
-   WHAT: Default styles for small screens.
-   WHAT IT DOES: Sets the basic look and stacks everything in one column.
-   WHAT IT MEANS: The website works on a phone first before adding desktop features.
-   */
+/* =====================================================================
+   Color palette
+   bg:       #ffffff   (White)
+   surface:  #f8f9fa   (Light grey)
+   text:     #1a1a1a   (Near black)
+   primary:  #d32f2f   (Power red)
+   accent:   #212121   (Dark charcoal)
+   ===================================================================== */
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+}
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #1a1a1a;
+  background-color: #ffffff;
   line-height: 1.6;
-  /* Dark background for a Dark vibe */
-  background-color: #0a192f; 
-  color: #eee;
 }
 
-/* WHAT: Container class.
-   WHAT IT DOES: Centers the page and stops it from getting too wide.
-   WHAT IT MEANS: Keeps content easy to read on huge monitors. */
-.container {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
+/* Type hierarchy (WHAT IT IS).
+   Uses clamp for fluid sizes (WHAT IT DOES).
+   Makes text fit any screen (WHAT IT MEANS). */
+h1, h2, h3 { 
+  font-family: "Playfair Display", Georgia, serif; 
+  line-height: 1.1; 
+  margin: 0;
 }
 
-h1 {
-  text-align: center;
-  margin: 0 0 8px;
-  color: #00ffff; 
+h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); color: #d32f2f; }
+p { font-size: clamp(1rem, 1.2vw, 1.125rem); max-width: 65ch; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* Buttons (WHAT IT IS).
+   Styles the action buttons (WHAT IT DOES).
+   Draws attention to key actions (WHAT IT MEANS). */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-p.lead {
-  text-align: center;
-  margin: 0 0 18px;
-  color: #bbb;
+.btn-primary {
+  background-color: #d32f2f;
+  color: #fff;
 }
 
-.ai-disclosure {
-  font-size: 0.8rem;
-  color: #777;
-  margin-bottom: 30px;
-  font-style: italic;
+.btn-primary:hover {
+  background-color: #b71c1c;
 }
 
-/* WHAT: Responsive image style.
-   WHAT IT DOES: Makes the image fill the width but keep its shape.
-   WHAT IT MEANS: The image scales up and down without stretching. */
-.rwd-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  margin-bottom: 18px;
+.btn-secondary {
+  background-color: #212121;
+  color: #fff;
 }
 
-/* WHAT: Video wrap style.
-   WHAT IT DOES: Locks a 16:9 shape so the video doesn't look stretched.
-   WHAT IT MEANS: No matter the screen size, the video keeps the same shape. */
-.video-wrap {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #000;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 24px;
+.btn-secondary:hover {
+  background-color: #000;
 }
 
-.video-wrap iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
+/* Header (WHAT IT IS).
+   Sticky top navigation (WHAT IT DOES).
+   Keeps links visible while scrolling (WHAT IT MEANS). */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 2px solid #d32f2f;
 }
 
-/* WHAT: Cards wrapper.
-   WHAT IT DOES: Uses Flexbox to align the cards.
-   WHAT IT MEANS: Allows cards to move from a vertical list to a side-by-side row. */
-.cards {
+.header-inner {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+#primary-nav {
+  display: flex;
   gap: 20px;
 }
 
-/* WHAT: Individual card style.
-   WHAT IT DOES: Adds a background, padding, and a shadow.
-   WHAT IT MEANS: Makes each section look like a separate "card" on the page. */
+#primary-nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+#primary-nav a:hover {
+  color: #d32f2f;
+}
+
+/* Hero (WHAT IT IS).
+   Big intro section (WHAT IT DOES).
+   Makes a strong first impression (WHAT IT MEANS). */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+.hero h1 { margin-bottom: 1rem; }
+.hero p { margin: 0 auto 2rem auto; }
+.hero-btns { display: flex; gap: 15px; justify-content: center; }
+
+/* Grid (WHAT IT IS).
+   Layout for feature cards (WHAT IT DOES).
+   Organizes info in a clean way (WHAT IT MEANS). */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
 .card {
-  background: #1e1e1e;
+  background: #fff;
+  padding: 30px;
   border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-  border: 1px solid #333;
+  border: 1px solid #ddd;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.card h2 {
-  color: #C0C0C0; 
-  margin-top: 0;
+.card:hover { transform: translateY(-5px); }
+
+/* About Page Grid (WHAT IT IS).
+   Two column layout for story (WHAT IT DOES).
+   Balances text and image (WHAT IT MEANS). */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  align-items: center;
 }
 
-/* 
-   BREAKPOINT 1: TABLET (600px and up)
-   WHAT: Media query for medium screens.
-   WHAT IT DOES: Changes background to a slightly lighter dark blue.
-   WHAT IT MEANS: The screen is now wide enough to show two items.
-    */
-@media (min-width: 600px) {
-  body { background-color: #112240; }
-
-  .cards { flex-direction: row; }
-
-  /* width 48% means two cards fit in one row */
-  .card { width: 48%; }
+@media (max-width: 767px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* 
-   BREAKPOINT 2: DESKTOP (900px and up)
-   WHAT: Media query for larger screens.
-   WHAT IT DOES: Changes background to a deep midnight blue and makes 3 columns.
-   WHAT IT MEANS: More space allows us to fit three items in one row.
-    */
-@media (min-width: 900px) {
-  body { background-color: #0a192f; }
-
-  /* width 30% means three cards fit in one row */
-  .card { width: 30%; }
+/* Team Grid (WHAT IT IS).
+   Auto-responsive grid for team (WHAT IT DOES).
+   Fits any number of cards (WHAT IT MEANS). */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
 }
 
-/* 
-   BREAKPOINT 3: LARGE DESKTOP (1200px and up)
-   WHAT: Media query for extra-large screens.
-   WHAT IT DOES: Changes background to a very dark navy and adds more padding.
-   WHAT IT MEANS: Maximizes the use of a large monitor by showing everything in one row.
-   */
-@media (min-width: 1200px) {
-  body { background-color: #020c1b; }
+.team-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
 
-  .container { padding: 28px; }
+/* Callout (WHAT IT IS).
+   Special block for quotes (WHAT IT DOES).
+   Makes a point stand out (WHAT IT MEANS). */
+.callout {
+  background: #f8f9fa;
+  border-left: 8px solid #d32f2f;
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  font-style: italic;
+}
 
-  /* width 22% means four cards fit in one row */
-  .card { width: 22%; }
+/* Footer (WHAT IT IS).
+   Bottom info area (WHAT IT DOES).
+   Provides copyright and basic links (WHAT IT MEANS). */
+.site-footer {
+  background: #212121;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Accessibility (WHAT IT IS).
+   Visible focus rings (WHAT IT DOES).
+   Helps keyboard users navigate (WHAT IT MEANS). */
+:focus-visible {
+  outline: 3px solid #d32f2f;
+  outline-offset: 3px;
+}
+
+/* Mobile Nav (WHAT IT IS).
+   Hamburger menu for phones (WHAT IT DOES).
+   Saves screen space (WHAT IT MEANS). */
+.menu-toggle { 
+  display: none; 
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .menu-toggle { display: block; }
+  #primary-nav {
+    position: fixed; 
+    top: 60px; right: 0; bottom: 0;
+    width: 250px; 
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: -5px 0 10px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+  body.menu-open #primary-nav { transform: translateX(0); }
+}
+
+/* Reduced Motion (WHAT IT IS).
+   Stops movement (WHAT IT DOES).
+   Prevents nausea for some users (WHAT IT MEANS). */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -2,84 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- WHAT: Viewport meta tag. 
-       WHAT IT DOES: Tells the browser to scale the page to the device width.
-       WHAT IT MEANS: The site won't look like a tiny desktop page on a phone. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Images and Responsive Video</title>
+  <title>Painz and Gainz — Home</title>
+  <!-- Link to CSS (WHAT IT IS). 
+       Connects HTML to the style sheet (WHAT IT DOES). 
+       Keeps layout separate from content (WHAT IT MEANS). -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- WHAT: Main container.
-       WHAT IT DOES: Centers everything and stops it from spreading too wide.
-       WHAT IT MEANS: The content stays in a neat middle column on big screens. -->
-  <div class="container">
-    <header>
-      <!-- WHAT: Main heading.
-           WHAT IT DOES: Sets the title of the page.
-           WHAT IT MEANS: This is the biggest and most important text. -->
-      <h1>DJ BREAKFAST</h1>
-      
-      <!-- WHAT: Lead paragraph.
-           WHAT IT DOES: Gives a quick intro to the page.
-           WHAT IT MEANS: This is a sub-title that explains the purpose of the site. -->
-      <p class="lead">Resize the browser to see colors and columns change.</p>
-      
-      <!-- WHAT: AI Disclosure.
-           WHAT IT DOES: Tells AI was used for the layout.
-           WHAT IT MEANS: Being honest about using tools to build the project. -->
-      <div class="ai-disclosure">
-      </div>        <p>AI DISCLOSURE: I used ChatGPT, to generate artwork and to help with the media queries. I reviewed all AI‑assisted code by hand and added comments explaining how each part works. This page also includes a video sourced from YouTube; I do not own any rights to the video.</p>
+  <!-- Header (WHAT IT IS). 
+       Top part of the page (WHAT IT DOES). 
+       Holds the logo and links (WHAT IT MEANS). -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo (WHAT IT IS). 
+           Actual hand-drawn SVG logo (WHAT IT DOES). 
+           Shows the brand image (WHAT IT MEANS). -->
+      <a href="index.html" class="brand-container">
+        <img src="img/logo.svg" alt="Painz and Gainz Logo" width="40" height="40">
+        <span class="brand-text">Painz and Gainz</span>
+      </a>
 
-    </header>
+      <!-- Navigation (WHAT IT IS). 
+           Link list (WHAT IT DOES). 
+           Lets users jump to pages (WHAT IT MEANS). -->
+      <nav id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-    <!-- WHAT: Responsive image.
-         WHAT IT DOES: Fills the width of the screen and keeps its shape.
-         WHAT IT MEANS: The picture won't get cut off or stretched on different phones. -->
-    <img class="rwd-img" 
-         src="images/studio-main.jpg" 
-         alt="A wide shot of the DJ  setup with controllers and monitors">
-
-    <!-- WHAT: Responsive video wrapper.
-         WHAT IT DOES: Forces the video to keep a 16:9 widescreen shape.
-         WHAT IT MEANS: The video stays looking like a movie and doesn't get black bars or crop. -->
-    <div class="video-wrap">
-      <iframe src="https://www.youtube.com/embed/r5X_uXoqmsE" 
-              title="DJ on the ones and twos performance" 
-              allowfullscreen></iframe>
+      <!-- Mobile Toggle (WHAT IT IS). 
+           Menu button for phones (WHAT IT DOES). 
+           Toggles the nav drawer (WHAT IT MEANS). -->
+      <button type="button" class="menu-toggle" id="menu-btn" 
+              aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
     </div>
+  </header>
 
-    <!-- WHAT: Cards wrapper.
-         WHAT IT DOES: A flexbox that switches from 1 column to more as the screen grows.
-         WHAT IT MEANS: The layout automatically adjusts based on the device size. -->
-    <div class="cards">
-
-      <!-- WHAT: Content Card.
-           WHAT IT DOES: A box that holds a specific topic.
-           WHAT IT MEANS: Organizes info into neat, separate sections. -->
-      <div class="card">
-        <h2>The Gear</h2>
-        <p>I use an RP8000 and a Numark turntable to keep my mixes sounding sharp and professional.</p>
+  <main>
+    <!-- Hero Section (WHAT IT IS). 
+         Big intro area (WHAT IT DOES). 
+         Grabs the user's attention (WHAT IT MEANS). -->
+    <section class="hero">
+      <h1>No Pain, No Gain.</h1>
+      <p>The hardest working gym in the city. We push you to your limits so you can break them.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary">Join Now</a>
+        <a href="services.html" class="btn btn-secondary">Our Classes</a>
       </div>
+    </section>
 
-      <div class="card">
-        <h2>Musical Style</h2>
-        <p>Spinning Top 40's House and Reggaeton while keeping the floor moving.</p>
-      </div>
+    <!-- Features Section (WHAT IT IS). 
+         Grid of gym benefits (WHAT IT DOES). 
+         Shows why this gym is better (WHAT IT MEANS). -->
+    <section class="feature-grid">
+      <article class="card">
+        <h3>24/7 Access</h3>
+        <p>Train whenever you want. Your goals don't have a closing time.</p>
+      </article>
+      <article class="card">
+        <h3>Pro Trainers</h3>
+        <p>Expert coaches to help you hit your PRs safely and fast.</p>
+      </article>
+      <article class="card">
+        <h3>Elite Gear</h3>
+        <p>The latest racks, plates, and machines for maximum growth.</p>
+      </article>
+    </section>
 
-      <div class="card">
-        <h2>The Performance</h2>
-        <p>Watching the crowd to see what they like, then change the music to keep the floor moving.</p>
-      </div>
+    <!-- Repeat Call-to-Action (WHAT IT IS). 
+         Second chance to join (WHAT IT DOES). 
+         Encourages users to sign up after reading (WHAT IT MEANS). -->
+    <section class="hero" style="min-height: 40vh;">
+      <h2>Ready to start?</h2>
+      <p>Stop making excuses and start making progress.</p>
+      <a href="contact.html" class="btn btn-primary">Join Now</a>
+    </section>
+  </main>
 
-      <div class="card">
-        <h2 >Digital Tools</h2>
-        <p>I use Algoriddim for my software to keep my music organized.</p>
-      </div>
+  <!-- Footer (WHAT IT IS). 
+       Bottom of the page (WHAT IT DOES). 
+       Contains copyright and basic info (WHAT IT MEANS). -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Painz and Gainz Gym. All rights reserved.</p>
+  </footer>
 
-    </div><!-- /.cards -->
-  </div><!-- /.container -->
-
+  <!-- JS (WHAT IT IS). 
+       Mobile menu logic (WHAT IT DOES). 
+       Makes the menu open and close (WHAT IT MEANS). -->
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Painz and Gainz</title>
+  <!-- Link to CSS (WHAT IT IS). 
+       Connects HTML to the style sheet (WHAT IT DOES). 
+       Keeps layout separate from content (WHAT IT MEANS). -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header (WHAT IT IS). 
+       Top part of the page (WHAT IT DOES). 
+       Holds the logo and links (WHAT IT MEANS). -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo (WHAT IT IS). 
+           Actual hand-drawn SVG logo (WHAT IT DOES). 
+           Shows the brand image (WHAT IT MEANS). -->
+      <a href="index.html" class="brand-container">
+        <img src="img/logo.svg" alt="Painz and Gainz Logo" width="40" height="40">
+        <span class="brand-text">Painz and Gainz</span>
+      </a>
+
+      <!-- Navigation (WHAT IT IS). 
+           Link list (WHAT IT DOES). 
+           Lets users jump to pages (WHAT IT MEANS). -->
+      <nav id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Mobile Toggle (WHAT IT IS). 
+           Menu button for phones (WHAT IT DOES). 
+           Toggles the nav drawer (WHAT IT MEANS). -->
+      <button type="button" class="menu-toggle" id="menu-btn" 
+              aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero (WHAT IT IS). 
+         Simple intro for the About page (WHAT IT DOES). 
+         Sets the context for the user (WHAT IT MEANS). -->
+    <section class="hero" style="min-height: 40vh;">
+      <h1>About Us</h1>
+      <p>Get to know the team and the mission behind the grind.</p>
+    </section>
+
+    <!-- Our Story (WHAT IT IS). 
+         Two-column grid layout (WHAT IT DOES). 
+         Balances a story with a photo (WHAT IT MEANS). -->
+    <section class="about-grid">
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>
+          Painz and Gainz started with a simple idea: that anyone can reach their peak if they have the right support and the right environment. We believe in hard work, consistency, and the power of a supportive community.
+        </p>
+        <p>
+          This gym is more than just equipment; it's a place where people come to push their limits and discover what they are truly capable of. We focus on safe form, intense effort, and real results.
+        </p>
+      </div>
+      <img src="img/about.jpg" alt="Interior of the Painz and Gainz gym with modern equipment" class="about-img">
+    </section>
+
+    <!-- Callout (WHAT IT IS). 
+         Highlighted quote box (WHAT IT DOES). 
+         Makes the mission statement stand out (WHAT IT MEANS). -->
+    <aside class="callout">
+      <p>"Strength does not come from winning. Your struggles develop your strengths."</p>
+    </aside>
+
+    <!-- Team Grid (WHAT IT IS). 
+         Auto-responsive grid of cards (WHAT IT DOES). 
+         Introduces the trainers (WHAT IT MEANS). -->
+    <section class="team-grid">
+      <article class="team-card">
+        <svg width="50" height="50" viewBox="0 0 100 100" role="img" aria-labelledby="icon-1" style="margin: 0 auto; display: block;">
+          <title id="icon-1">Strength Icon</title>
+          <circle cx="50" cy="50" r="40" fill="#d32f2f" />
+          <text x="50" y="60" text-anchor="middle" fill="white" font-size="40">💪</text>
+        </svg>
+        <h3>Lifting Coach</h3>
+        <p>Specialist in heavy lifting and powerlifting.</p>
+      </article>
+
+      <article class="team-card">
+        <svg width="50" height="50" viewBox="0 0 100 100" role="img" aria-labelledby="icon-2" style="margin: 0 auto; display: block;">
+          <title id="icon-2">Health Icon</title>
+          <circle cx="50" cy="50" r="40" fill="#d32f2f" />
+          <text x="50" y="60" text-anchor="middle" fill="white" font-size="40">🥗</text>
+        </svg>
+        <h3>Health Coach</h3>
+        <p>Expert in nutrition and wellness coaching.</p>
+      </article>
+
+      <article class="team-card">
+        <svg width="50" height="50" viewBox="0 0 100 100" role="img" aria-labelledby="icon-3" style="margin: 0 auto; display: block;">
+          <title id="icon-3">Agility Icon</title>
+          <circle cx="50" cy="50" r="40" fill="#d32f2f" />
+          <text x="50" y="60" text-anchor="middle" fill="white" font-size="40">🏃</text>
+        </svg>
+        <h3>Agility Coach</h3>
+        <p>Specialist in agility and athletic performance.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer (WHAT IT IS). 
+       Bottom of the page (WHAT IT DOES). 
+       Contains copyright and basic info (WHAT IT MEANS). -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Painz and Gainz Gym. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
